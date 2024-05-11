@@ -58,6 +58,7 @@ const useCourse = ({ kode = "" }: useCourseProps = {}) => {
     api.url = "/matakuliah/matakuliah-all";
     try {
       const response = await api.call();
+      console.log(response, "======================");
       setListCourse(response.data); // Assuming response.data is the array of courses
     } catch (err) {
       console.error(err);

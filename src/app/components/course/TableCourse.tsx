@@ -21,6 +21,7 @@ const TABLE_HEAD = [
 ];
 
 export function TableCourse({ listCourse }: TableCourseProps) {
+  console.log(listCourse, "==================");
   const {
     handleOpenDialogDelete,
     openDialogDelete,

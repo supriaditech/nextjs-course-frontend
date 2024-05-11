@@ -8,6 +8,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -21,16 +22,16 @@ export function StickyNavbar() {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {/* <Typography
+      <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Pages
-        </a>
-      </Typography> */}
+        <Link href="/" className="flex items-center">
+          Profile
+        </Link>
+      </Typography>
       <Typography
         as="li"
         variant="small"
@@ -39,6 +40,16 @@ export function StickyNavbar() {
       >
         <Link href="/list-course" className="flex items-center">
           Course
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Link href="/smart-garden" className="flex items-center">
+          Smart Garden
         </Link>
       </Typography>
     </ul>
@@ -52,7 +63,12 @@ export function StickyNavbar() {
           href="/"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          Ujian Kompri
+          <Image
+            src="/image/logo.png" // Pastikan jalur ini sesuai dengan struktur folder Anda
+            alt="Logo"
+            width={150}
+            height={20}
+          />
         </Typography>
         <div className="flex items-center gap-4">
           <div className="mr-4 hidden lg:block">{navList}</div>
